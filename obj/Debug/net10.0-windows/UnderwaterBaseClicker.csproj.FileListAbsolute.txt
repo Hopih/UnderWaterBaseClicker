@@ -23,3 +23,4 @@ C:\project\UnderwaterBaseClicker\obj\Debug\net10.0-windows\GeneratedInternalType
 C:\project\UnderwaterBaseClicker\obj\Debug\net10.0-windows\UnderwaterBaseClicker_MarkupCompile.lref
 C:\project\UnderwaterBaseClicker\obj\Debug\net10.0-windows\Ui\UnderwaterBaseView.baml
 C:\project\UnderwaterBaseClicker\obj\Debug\net10.0-windows\Ui\UnderwaterBaseView.g.cs
+C:\project\UnderwaterBaseClicker\obj\Debug\net10.0-windows\UnderwaterBaseClicker.sourcelink.json

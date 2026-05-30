@@ -44,7 +44,12 @@
                                 </TextBlock.Effect>
                             </TextBlock>
                         </StackPanel>
-                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <Button x:Name="ResetButton"
+                                    Content="↺ Начать сначала"
+                                    Style="{StaticResource ResetButtonStyle}"
+                                    Margin="0,0,0,8"
+                                    Click="ResetButton_Click"/>
                             <Border Background="#44000000" CornerRadius="12" Padding="10,6">
                                 <StackPanel>
                                     <TextBlock x:Name="RatesText" FontSize="11"
