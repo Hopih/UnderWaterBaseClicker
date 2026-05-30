@@ -175,6 +175,25 @@ public partial class MainWindow : Window
             _displayedEnergy += diff * 0.22;
     }
 
+    private void ResetButton_Click(object sender, RoutedEventArgs e)
+    {
+        var confirm = MessageBox.Show(
+            "Сбросить весь прогресс? Энергия и все купленные модули будут удалены.",
+            "Начать сначала",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Warning);
+
+        if (confirm != MessageBoxResult.Yes)
+            return;
+
+        _state.Reset();
+        _displayedEnergy = 0;
+        FxCanvas.Children.Clear();
+        BaseView.SyncFromUpgrades(_state.Upgrades, animateNew: false);
+        BaseHintText.Text = "Игра начата заново";
+        RefreshUi();
+    }
+
     private void RefreshUi()
     {
         EnergyText.Text = Upgrade.FormatNumber(_displayedEnergy);

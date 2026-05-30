@@ -86,6 +86,17 @@ public sealed class GameState
         }
     }
 
+    public void Reset()
+    {
+        Energy = 0;
+        TotalEnergyEarned = 0;
+        foreach (var upgrade in Upgrades)
+            upgrade.Count = 0;
+
+        if (File.Exists(SavePath))
+            File.Delete(SavePath);
+    }
+
     private static List<Upgrade> CreateDefaultUpgrades() =>
     [
         new("algae", "Ферма водорослей", "Пассивная биоэнергия", 15, 1.12, UpgradeKind.Passive, 0.5, "🌿"),
