@@ -1,0 +1,14 @@
+{
+  "Energy": 87.12171213148605,
+  "TotalEnergyEarned": 2662.8250000001262,
+  "UpgradeCounts": {
+    "algae": 23,
+    "drone": 3,
+    "pressure": 4,
+    "sub": 2,
+    "sonar": 0,
+    "lab": 0,
+    "reactor": 0,
+    "dome": 0
+  }
+}

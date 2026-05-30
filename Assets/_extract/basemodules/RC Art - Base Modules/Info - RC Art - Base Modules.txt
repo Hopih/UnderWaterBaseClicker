@@ -1,0 +1,26 @@
+Reactorcore Art (RC Art)
+==
+PACK: Base Modules
+
+--
+
+Pixel-art sprites pack depicting modules of a side-view underground base complex, megastructure, giant vehicle, tech building or space station interior. There are both foreground (solid) modules and background (passthrough) modules.
+
+The idea is to build bases by first placing the solid modules, then filling in the inside spots with background elements. There are also large blast doors, interactive background tiles and other auxiliary blocks to build all kinds of cool structures.
+
+I provide some blocks with 4-rotations to stimulate the idea that these base modules could be vertical and can be used very flexibly, but its up to you to rotate any "missing pieces" either by flipping them inside the game engine or via manually created rotated copies of those sprites.
+
+--
+
+All blocks are measured with a 24-pixels per meter/tile standard. An average human would be roughly between 32-40 pixels tall. Suitable for more cartoony proportion characters similar to Super Mario.
+
+--
+
+By default in image import settings, all sprites/textures have been set to 32 pixels per unit and using a point filter so they appear crisp.
+
+--
+
+Contact:
+mailto:reactorcoregames@gmail.com
+
+Enjoy!

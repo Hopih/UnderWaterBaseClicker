@@ -1,0 +1,115 @@
+    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="DeepSea">#FF061828</Color>
+    <Color x:Key="PanelSea">#FF0E2A44</Color>
+    <Color x:Key="CardSea">#FF123450</Color>
+    <Color x:Key="AccentCyan">#FF00D4E8</Color>
+    <Color x:Key="Gold">#FFFFD54F</Color>
+    <Color x:Key="BuyGreen">#FF43A047</Color>
+    <Color x:Key="TextLight">#FFDCF4FF</Color>
+    <Color x:Key="TextMuted">#FF8EB4C8</Color>
+
+    <SolidColorBrush x:Key="DeepSeaBrush" Color="{StaticResource DeepSea}"/>
+    <SolidColorBrush x:Key="PanelSeaBrush" Color="{StaticResource PanelSea}"/>
+    <SolidColorBrush x:Key="CardSeaBrush" Color="{StaticResource CardSea}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentCyan}"/>
+    <SolidColorBrush x:Key="GoldBrush" Color="{StaticResource Gold}"/>
+    <SolidColorBrush x:Key="TextLightBrush" Color="{StaticResource TextLight}"/>
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMuted}"/>
+
+    <LinearGradientBrush x:Key="OceanBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#FF041018" Offset="0"/>
+        <GradientStop Color="#FF0A2848" Offset="0.5"/>
+        <GradientStop Color="#FF020810" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HudGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#EE0E3555" Offset="0"/>
+        <GradientStop Color="#CC081828" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ShopPanelBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#F0102840" Offset="0"/>
+        <GradientStop Color="#F0081828" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="UpgradeCardStyle" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF163858" Offset="0"/>
+                    <GradientStop Color="#FF0E2840" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="14"/>
+        <Setter Property="Margin" Value="0,0,0,8"/>
+        <Setter Property="Padding" Value="10,8"/>
+        <Setter Property="BorderBrush" Value="#4400D4E8"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="#000000" BlurRadius="8" ShadowDepth="2" Opacity="0.35"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BuyUpgradeButtonStyle" TargetType="Button">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Padding" Value="8,6"/>
+        <Setter Property="MinWidth" Value="76"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="bd" CornerRadius="10" Padding="{TemplateBinding Padding}">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FF66BB6A" Offset="0"/>
+                                <GradientStop Color="#FF388E3C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FF2E7D32" BlurRadius="6" ShadowDepth="2" Opacity="0.6"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="bd" Property="Background" Value="#FF3A4550"/>
+                            <Setter TargetName="bd" Property="Effect" Value="{x:Null}"/>
+                            <Setter Property="Opacity" Value="0.75"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bd" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#FF81C784" Offset="0"/>
+                                        <GradientStop Color="#FF43A047" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="bd" Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="0.96" ScaleY="0.96"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
