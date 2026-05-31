@@ -179,9 +179,9 @@ public partial class UnderwaterBaseView : UserControl
         public AnimatedDrone(int index)
         {
             Index = index;
-            var file = index % 2 == 0 ? "drone_diver.png" : "drone_fish.png";
+            var file = "drone_fish.png";
             _sheet = GameSprites.Load(file);
-            _frames = index % 2 == 0 ? 6 : 4;
+            _frames = 4;
             _image = GameSprites.CreateSheetFrame(file, 0, _frames, 36);
             Root = new Border
             {
