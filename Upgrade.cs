@@ -51,3 +51,4 @@ public sealed class Upgrade(
         return $"{value:0.#}";
     }
 }
+

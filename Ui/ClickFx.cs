@@ -89,7 +89,7 @@ public static class ClickFx
         sb.Begin();
     }
 
-    public static void PulseScale(ScaleTransform transform, double peak = 2)
+    public static void PulseScale(ScaleTransform transform, double peak = 1.14)
     {
         var anim = new DoubleAnimationUsingKeyFrames();
         anim.KeyFrames.Add(new LinearDoubleKeyFrame(1, KeyTime.FromTimeSpan(TimeSpan.Zero)));
