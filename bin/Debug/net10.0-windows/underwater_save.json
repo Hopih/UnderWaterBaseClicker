@@ -1,9 +1,9 @@
 {
-  "Energy": 17.399999999999636,
-  "TotalEnergyEarned": 188.5999999999985,
+  "Energy": 19.00000000000003,
+  "TotalEnergyEarned": 98.99999999999989,
   "UpgradeCounts": {
     "algae": 0,
-    "drone": 2,
+    "drone": 1,
     "pressure": 0,
     "sub": 0,
     "sonar": 0,

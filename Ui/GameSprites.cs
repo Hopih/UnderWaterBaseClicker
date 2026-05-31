@@ -12,7 +12,7 @@ public static class GameSprites
     public static readonly Dictionary<string, string> UpgradeSprites = new()
     {
         ["algae"] = "seaweed_1.png",
-        ["drone"] = "drone_diver.png",
+        ["drone"] = "drone_fish.png",
         ["pressure"] = "pressure_chain.png",
         ["sub"] = "submarine.png",
         ["sonar"] = "sonar_mast.png",
