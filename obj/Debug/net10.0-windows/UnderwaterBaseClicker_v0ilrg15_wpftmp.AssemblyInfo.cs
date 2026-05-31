@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UnderwaterBaseClicker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6933144c309fc58448c4ceea8ab90ad0b6685aa8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1c22bd082abfe67885f379494e044d44d6e89d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("UnderwaterBaseClicker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UnderwaterBaseClicker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
