@@ -96,7 +96,7 @@
                                 <Trigger Property="IsPressed" Value="True">
                                     <Setter Property="RenderTransform">
                                         <Setter.Value>
-                                            <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
