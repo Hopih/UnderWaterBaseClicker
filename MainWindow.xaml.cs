@@ -46,7 +46,7 @@ public partial class MainWindow : Window
                 VerticalAlignment = VerticalAlignment.Center
             };
             buy.Click += (_, _) => TryBuy(upgrade);
-
+            
             var card = new Border { Style = (Style)FindResource("UpgradeCardStyle") };
             var grid = new Grid();
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });

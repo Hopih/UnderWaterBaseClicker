@@ -57,7 +57,7 @@ public sealed class GameState
 
         var json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(SavePath, json);
-    }
+    }   
 
     public void Load()
     {
@@ -70,7 +70,7 @@ public sealed class GameState
             var data = JsonSerializer.Deserialize<SaveData>(json);
             if (data is null)
                 return;
-
+            
             Energy = data.Energy;
             TotalEnergyEarned = data.TotalEnergyEarned;
 

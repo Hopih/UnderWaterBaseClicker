@@ -15,7 +15,8 @@ public static class ModuleLayout
         new(272, 0, 4),
         new(340, -3, 5),
         new(408, 2, 6),
-        new(476, 0, 7)
+        new(476, 0, 7),
+        new (1000,1000,1000)
     ]);
 
     /// <summary>Подлодки плавают в воде над песком.</summary>
@@ -23,7 +24,8 @@ public static class ModuleLayout
         new(0, 0, 0),
         new(120, -12, 1),
         new(240, 4, 2),
-        new(360, -8, 3)
+        new(360, -8, 3),
+        new (1000,1000,1000)
     ]);
 
     public static readonly Point ReactorCenter = new(320, 170);
