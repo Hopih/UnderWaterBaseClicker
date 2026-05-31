@@ -77,7 +77,6 @@ public partial class UnderwaterBaseView : UserControl
     {
         if (!ModuleLayout.HasVisual(upgrade.Id))
             return;
-
         AddModuleVisual(upgrade.Id, upgrade.Count - 1, animate: true);
         _syncedCounts[upgrade.Id] = upgrade.Count;
     }
