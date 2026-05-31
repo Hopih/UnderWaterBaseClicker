@@ -8,7 +8,7 @@ namespace UnderwaterBaseClicker.Ui;
 
 public static class ClickFx
 {
-    public static void SpawnFloatingEnergy(Canvas layer, Point origin, string text)
+    public static void SpawnFloatingEnergy(Canvas layer, Point origin, string text, Brush? brush = null)
     {
         var driftX = (Random.Shared.NextDouble() - 0.5) * 40;
 
@@ -17,10 +17,10 @@ public static class ClickFx
             Text = text,
             FontSize = 24 + Random.Shared.Next(0, 8),
             FontWeight = FontWeights.Bold,
-            Foreground = new SolidColorBrush(Color.FromRgb(255, 230, 100)),
+            Foreground = brush ?? new SolidColorBrush(Color.FromRgb(255, 230, 100)),
             Effect = new System.Windows.Media.Effects.DropShadowEffect
             {
-                Color = Color.FromRgb(255, 200, 50),
+                Color = brush != null ? Colors.Red : Color.FromRgb(255, 200, 50),
                 BlurRadius = 14,
                 ShadowDepth = 0,
                 Opacity = 0.9
@@ -33,12 +33,11 @@ public static class ClickFx
         Canvas.SetLeft(block, origin.X - block.DesiredSize.Width / 2);
         Canvas.SetTop(block, origin.Y);
 
-        var transform = (TranslateTransform)block.RenderTransform;
-
         var rise = new DoubleAnimation(0, -90 - Random.Shared.Next(20, 50), TimeSpan.FromMilliseconds(850))
         {
             EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
         };
+
         var fade = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(850));
         var slide = new DoubleAnimation(0, driftX, TimeSpan.FromMilliseconds(850));
 
@@ -55,7 +54,7 @@ public static class ClickFx
         sb.Completed += (_, _) => layer.Children.Remove(block);
         sb.Begin();
     }
-
+    
     public static void SpawnRipple(Canvas layer, Point center, double maxRadius = 70)
     {
         var ripple = new Ellipse

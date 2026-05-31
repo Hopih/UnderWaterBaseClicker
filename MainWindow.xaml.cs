@@ -24,6 +24,7 @@ public partial class MainWindow : Window
 
         BaseView.ReactorClicked += (_, _) => OnReactorClick();
         BaseView.SyncFromUpgrades(_state.Upgrades, animateNew: false);
+        _state.DowngradeOccurred += OnDowngradeOccurred;
 
         BuildUpgradeCards();
 
@@ -34,6 +35,18 @@ public partial class MainWindow : Window
         Closed += (_, _) => _state.Save();
 
         RefreshUi();
+    }
+    private void OnDowngradeOccurred(object? sender, EventArgs e)
+    {
+        var point = BaseView.GetReactorCenter(FxCanvas);
+
+        ClickFx.SpawnFloatingEnergy(
+            FxCanvas,
+            point,
+            "⚠ АВАРИЯ! УРОВНИ СНИЖЕНЫ",
+            Brushes.Red);
+
+        ClickFx.SpawnRipple(FxCanvas, point, 120);
     }
 
     private void BuildUpgradeCards()
@@ -114,10 +127,21 @@ public partial class MainWindow : Window
     private void OnReactorClick()
     {
         var gained = _state.EnergyPerClick;
-        _state.AddClickEnergy();
+
+        bool accident = _state.AddClickEnergy();
 
         var clickPoint = BaseView.GetReactorCenter(FxCanvas);
-        ClickFx.SpawnFloatingEnergy(FxCanvas, clickPoint, $"+{Upgrade.FormatNumber(gained)}");
+
+        ClickFx.SpawnFloatingEnergy(
+            FxCanvas,
+            clickPoint,
+            $"+{Upgrade.FormatNumber(gained)}");
+
+        if (accident)
+        {
+            
+        }
+
         ClickFx.SpawnRipple(FxCanvas, clickPoint, 100);
         ClickFx.SpawnSparkles(FxCanvas, clickPoint, 6);
         BaseView.PulseReactor();

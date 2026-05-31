@@ -10,8 +10,9 @@ public sealed class GameState
         "underwater_save.json");
 
     private Random _random = new();
+
+    public event EventHandler? DowngradeOccurred;
     
-    public event EventHandler<Upgrade>? OnUpgrade;
 
     public double Energy { get; set; }
     public double TotalEnergyEarned { get; set; }
@@ -25,7 +26,7 @@ public sealed class GameState
     public double EnergyPerSecond =>
         Upgrades.Where(u => u.Kind == UpgradeKind.Passive).Sum(u => u.TotalEffect);
 
-    public void AddClickEnergy()
+    public bool AddClickEnergy()
     {
         int num = _random.Next(1,50);
         Energy += EnergyPerClick;
@@ -33,7 +34,10 @@ public sealed class GameState
         if (num == 5)
         {
             DownGrade.Down(Upgrades);
+            DowngradeOccurred?.Invoke(this, EventArgs.Empty);
+            return true;
         }
+        return false;
     }
 
     public void AddPassiveEnergy(double seconds)
